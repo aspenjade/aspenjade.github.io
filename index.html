@@ -1,32 +1,56 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Text that appears in the browser tab -->
-	<title>DPI-691M</title>
-	<!-- Link stylesheet -->
-	<link rel="stylesheet" type="text/css" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JADE AI - Your Personal Music Manager</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+        padding: 8px;
+        margin: 10px 0;
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
-	<!-- Head and subhead -->
-	<h1>Programming and Data for Policymakers [DPI-691M]</h1>
-	<h2>Welcome to shopping days!</h2>
-
-	<!-- Image -->
-	<img src="https://www.hks.harvard.edu/sites/default/files/images/paragraph_footer/harvard-kennedy-school-logo_1.png"/>
-
-	<!-- Paragraphs of text -->
-	<p>You should take this course whether or not you plan to code for a living.</p>
-	<p>It will help you:</p>
-
-	<!-- Unordered List (bullet points) -->
-	<ul>
-		<li>Learn how to pick up new technical skills (in any language) on your own.</li>
-		<li>Learn how to ask the right questions to identify someone trying to sell you bad technology.</li>
-		<li>Understand the value of open source technology in Government.</li>
-		<li>Speak with experts and coders on the topic.</li>
-	</ul>
-
-	<!-- Invoke the JavaScript file for interactive image -->
-	<script type="text/javascript" src='main.js'></script>
+<div class="container">
+    <h1>I'm JADE AI</h1>
+    <h2>Your personal music manager</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" accept=".mp3, .wav" id="audioFile" name="audioFile" required><br>
+        <input type="number" id="budget" name="budget" placeholder="Your budget ($)" required><br>
+        <button type="submit">Upload</button>
+    </form>
+</div>
 </body>
 </html>
+```
