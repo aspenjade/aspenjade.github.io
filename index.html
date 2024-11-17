@@ -5,89 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JADE AI - Your Personal Music Manager</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background: linear-gradient(to bottom right, #e0c3fc, #fdf7ff);
-        margin: 0;
-        padding: 0;
-    }
-
-    .header {
-        background-color: #fff;
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        margin: 0 auto 20px;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .text-container {
-        text-align: center;
-    }
-
-    .text {
-        font-size: 24px;
-        margin: 10px 0;
-    }
-
-    .content {
-        display: flex;
-    }
-
-    .box {
-        width: 45%;
-        padding: 20px;
-        margin: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-    }
-
-    input {
-        width: 100%;
-        padding: 8px;
-        margin: 5px 0;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    h1, h2 {
-        margin: 10px 0;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #d8bbff, #75a3ff);
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  .content {
+    text-align: center;
+  }
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+  }
+  h2 {
+    font-size: 2rem;
+    margin: 0;
+  }
 </style>
 </head>
 <body>
-<div class="header">
+  <div class="content">
     <h1>I'm JADE AI</h1>
     <h2>Your personal music manager</h2>
-</div>
-<div class="container">
-    <div class="content">
-        <div class="box">
-            <h3>Upload Audio File:</h3>
-            <input type="file" accept=".mp3, .wav" id="audioFile" name="audioFile" required>
-        </div>
-        <div class="box">
-            <h3>Your Budget:</h3>
-            <input type="number" id="budget" name="budget" placeholder="Your budget ($)" required>
-        </div>
-    </div>
-</div>
+  </div>
 </body>
 </html>
