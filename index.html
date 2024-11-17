@@ -13,23 +13,41 @@
         padding: 0;
     }
 
-    .container {
-        max-width: 600px;
-        margin: 100px auto;
-        padding: 20px;
+    .header {
         background-color: #fff;
+        padding: 20px;
+        margin: 20px 0;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: space-around;
+        max-width: 400px;
+        margin: 0 auto 20px;
     }
 
-    .input-wrapper {
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-container {
+        text-align: center;
+    }
+
+    .text {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .content {
+        display: flex;
+    }
+
+    .box {
         width: 45%;
-        padding: 10px;
-        margin: 5px;
+        padding: 20px;
+        margin: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        background-color: #f9f9f9;
     }
 
     input {
@@ -48,19 +66,27 @@
         border-radius: 4px;
         cursor: pointer;
     }
+
+    h1, h2 {
+        margin: 10px 0;
+    }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="header">
     <h1>I'm JADE AI</h1>
     <h2>Your personal music manager</h2>
-    <div class="box">
-        <h3>Upload Audio File:</h3>
-        <input type="file" accept=".mp3, .wav" id="audioFile" name="audioFile" required>
-    </div>
-    <div class="box">
-        <h3>Your Budget:</h3>
-        <input type="number" id="budget" name="budget" placeholder="Your budget ($)" required>
+</div>
+<div class="container">
+    <div class="content">
+        <div class="box">
+            <h3>Upload Audio File:</h3>
+            <input type="file" accept=".mp3, .wav" id="audioFile" name="audioFile" required>
+        </div>
+        <div class="box">
+            <h3>Your Budget:</h3>
+            <input type="number" id="budget" name="budget" placeholder="Your budget ($)" required>
+        </div>
     </div>
 </div>
 </body>
