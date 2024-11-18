@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload Your Next Release</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #d8bbff, #75a3ff);
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  .content {
+    text-align: center;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  input[type="file"] {
+    margin: 20px 0;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+    <h1>Upload your next release and a budget so I can work my marketing magic</h1>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <input type="file" name="song" accept=".mp3,.wav">
+      <input type="number" name="budget" placeholder="Enter your budget">
+      <button class="button" type="submit">Upload</button>
+    </form>
+  </div>
+</body>
+</html>
