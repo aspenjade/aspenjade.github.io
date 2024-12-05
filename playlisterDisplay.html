@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommended Playlists</title>
+    <title>Suggested Playlists</title>
     <style>
+        body {
+            background: linear-gradient(135deg, #d8bbff, #75a3ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
         #playlisterContainer {
             text-align: center;
-            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .playlistBox {
             border: 1px solid #ddd;
@@ -19,9 +30,10 @@
     </style>
 </head>
 <body>
-    background: linear-gradient(135deg, #d8bbff, #75a3ff);
-    <h1>We would suggest you apply to these playlists:</h1>
-    <div id="playlisterContainer"></div>
+    <div id="playlisterContainer">
+        <h2>We would suggest you apply to these playlists:</h2>
+        <div id="playlisterList"></div>
+    </div>
 
     <script>
         // Define the "playlister" object
@@ -38,7 +50,7 @@
 
         // Function to display the name and link of each entry in the map
         function displayPlaylisterMap(map) {
-            let playlisterContainer = document.getElementById("playlisterContainer");
+            let playlisterList = document.getElementById("playlisterList");
 
             map.forEach((playlist, key) => {
                 let playlistBox = document.createElement("div");
@@ -53,7 +65,7 @@
                 linkElement.textContent = playlist.link;
                 playlistBox.appendChild(linkElement);
 
-                playlisterContainer.appendChild(playlistBox);
+                playlisterList.appendChild(playlistBox);
             });
         }
 
