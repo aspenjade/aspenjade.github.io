@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlister Map Display</title>
+</head>
+<body>
+    <div id="playlisterContainer"></div> <!-- Container to display the playlister map -->
+
+    <script>
+        // Define the "playlister" object
+        function Playlister(name, link) {
+            this.name = name;
+            this.link = link;
+        }
+
+        // Create a map of integer to playlister
+        let playlisterMap = new Map();
+        playlisterMap.set(1, new Playlister("Playlist 1", "https://example.com/playlist1"));
+        playlisterMap.set(2, new Playlister("Playlist 2", "https://example.com/playlist2"));
+        playlisterMap.set(3, new Playlister("Playlist 3", "https://example.com/playlist3"));
+
+        // Function to display the name and link of each entry in the map
+        function displayPlaylisterMap(map) {
+            let playlisterContainer = document.getElementById("playlisterContainer");
+
+            map.forEach((playlist, key) => {
+                let playlistElement = document.createElement("p");
+                playlistElement.textContent = `Name: ${playlist.name}, Link: ${playlist.link}`;
+                playlisterContainer.appendChild(playlistElement);
+            });
+        }
+
+        // Display the name and link of each entry in the map on the website
+        displayPlaylisterMap(playlisterMap);
+    </script>
+</body>
+</html>
