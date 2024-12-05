@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlister Map Display</title>
+    <title>Recommended Playlists</title>
+    <style>
+        #playlisterContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .playlistBox {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <div id="playlisterContainer"></div> <!-- Container to display the playlister map -->
+    <h1>We would suggest you apply to these playlists:</h1>
+    <div id="playlisterContainer"></div>
 
     <script>
         // Define the "playlister" object
@@ -26,9 +40,19 @@
             let playlisterContainer = document.getElementById("playlisterContainer");
 
             map.forEach((playlist, key) => {
-                let playlistElement = document.createElement("p");
-                playlistElement.textContent = `Name: ${playlist.name}, Link: ${playlist.link}`;
-                playlisterContainer.appendChild(playlistElement);
+                let playlistBox = document.createElement("div");
+                playlistBox.classList.add("playlistBox");
+
+                let nameElement = document.createElement("p");
+                nameElement.textContent = playlist.name;
+                playlistBox.appendChild(nameElement);
+
+                let linkElement = document.createElement("a");
+                linkElement.href = playlist.link;
+                linkElement.textContent = playlist.link;
+                playlistBox.appendChild(linkElement);
+
+                playlisterContainer.appendChild(playlistBox);
             });
         }
 
