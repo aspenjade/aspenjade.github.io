@@ -16,15 +16,15 @@
         }
         #playlisterContainer {
             text-align: center;
-            background-color: #9853f5;
+            background-color: #c9a4fc;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .playlistBox {
-            background-color: #6902f7;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            background-color: purple;
+            color: white;
+            border-radius: 10px;
             padding: 10px;
             margin: 10px;
             display: inline-block;
@@ -39,18 +39,20 @@
 
     <script>
         // Define the "playlister" object
-        function Playlister(name, link) {
+        function Playlister(name, link, cost, acceptanceRate) {
             this.name = name;
             this.link = link;
+            this.cost = cost;
+            this.acceptanceRate = acceptanceRate;
         }
 
         // Create a map of integer to playlister
         let playlisterMap = new Map();
-        playlisterMap.set(1, new Playlister("Playlist 1", "https://example.com/playlist1"));
-        playlisterMap.set(2, new Playlister("Playlist 2", "https://example.com/playlist2"));
-        playlisterMap.set(3, new Playlister("Playlist 3", "https://example.com/playlist3"));
+        playlisterMap.set(1, new Playlister("Playlist 1", "https://example.com/playlist1", "$10", "80%"));
+        playlisterMap.set(2, new Playlister("Playlist 2", "https://example.com/playlist2", "$15", "85%"));
+        playlisterMap.set(3, new Playlister("Playlist 3", "https://example.com/playlist3", "$20", "75%"));
 
-        // Function to display the name and link of each entry in the map
+        // Function to display the name, link, cost, and acceptance rate of each entry in the map
         function displayPlaylisterMap(map) {
             let playlisterList = document.getElementById("playlisterList");
 
@@ -67,11 +69,19 @@
                 linkElement.textContent = playlist.link;
                 playlistBox.appendChild(linkElement);
 
+                let costElement = document.createElement("p");
+                costElement.textContent = `Cost: ${playlist.cost}`;
+                playlistBox.appendChild(costElement);
+
+                let acceptanceRateElement = document.createElement("p");
+                acceptanceRateElement.textContent = `Acceptance Rate: ${playlist.acceptanceRate}`;
+                playlistBox.appendChild(acceptanceRateElement);
+
                 playlisterList.appendChild(playlistBox);
             });
         }
 
-        // Display the name and link of each entry in the map on the website
+        // Display the name, link, cost, and acceptance rate of each entry in the map on the website
         displayPlaylisterMap(playlisterMap);
     </script>
 </body>
