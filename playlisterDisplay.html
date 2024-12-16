@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            color: white;
+            color: #4d4d4d;
             font-family: Arial, sans-serif;
         }
         #playlisterContainer {
@@ -21,25 +21,27 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
         }
         .playlistBox {
             background-color: #7b5c7f;
             color: white;
             border-radius: 10px;
-            padding: 10px;
-            margin: 10px;
-            display: inline-block;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
     <div id="playlisterContainer">
-        <h2>We would suggest you apply to these playlists:</h2>
+        <h2>Explore Curated Playlists</h2>
         <div id="playlisterList"></div>
     </div>
 
     <script>
-        // Define the "playlister" object
         function Playlister(name, link, cost, acceptanceRate) {
             this.name = name;
             this.link = link;
@@ -47,13 +49,11 @@
             this.acceptanceRate = acceptanceRate;
         }
 
-        // Create a map of integer to playlister
         let playlisterMap = new Map();
-        playlisterMap.set(1, new Playlister("Playlist 1", "https://example.com/playlist1", "$10", "80%"));
-        playlisterMap.set(2, new Playlister("Playlist 2", "https://example.com/playlist2", "$15", "85%"));
-        playlisterMap.set(3, new Playlister("Playlist 3", "https://example.com/playlist3", "$20", "75%"));
+        playlisterMap.set(1, new Playlister("Chillout Vibes", "https://example.com/chillout", "$10", "80%"));
+        playlisterMap.set(2, new Playlister("Work Focus Mix", "https://example.com/work-focus", "$15", "85%"));
+        playlisterMap.set(3, new Playlister("Weekend Party Hits", "https://example.com/weekend-party", "$20", "75%"));
 
-        // Function to display the name, link, cost, and acceptance rate of each entry in the map
         function displayPlaylisterMap(map) {
             let playlisterList = document.getElementById("playlisterList");
 
@@ -61,17 +61,17 @@
                 let playlistBox = document.createElement("div");
                 playlistBox.classList.add("playlistBox");
 
-                let nameElement = document.createElement("p");
+                let nameElement = document.createElement("h3");
                 nameElement.textContent = playlist.name;
                 playlistBox.appendChild(nameElement);
 
                 let linkElement = document.createElement("a");
                 linkElement.href = playlist.link;
-                linkElement.textContent = playlist.link;
+                linkElement.textContent = "Listen Now";
                 playlistBox.appendChild(linkElement);
 
                 let costElement = document.createElement("p");
-                costElement.textContent = `Cost: ${playlist.cost}`;
+                costElement.textContent = `Subscription Cost: ${playlist.cost}`;
                 playlistBox.appendChild(costElement);
 
                 let acceptanceRateElement = document.createElement("p");
@@ -82,7 +82,6 @@
             });
         }
 
-        // Display the name, link, cost, and acceptance rate of each entry in the map on the website
         displayPlaylisterMap(playlisterMap);
     </script>
 </body>
